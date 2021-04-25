@@ -25,6 +25,7 @@ namespace DeeperAndDeeper.Service.SolarBodyServices
             SolarBody solarBody = new SolarBody();
             solarBody.ID = 0;
             solarBody.Type = SolarBodyType.Asteroid;
+            solarBody.TypeName = "Asteroid";
 
             return solarBody;
         }

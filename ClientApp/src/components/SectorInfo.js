@@ -18,9 +18,14 @@ function SectorInfo(props) {
           <h3>Sector Information</h3>
         </label>
         <label>
-          Coordinates: {props.sector.pos.y}/{props.sector.pos.x}
+          <strong>Coordinates: {props.sector.pos.y}/{props.sector.pos.x}</strong>
         </label>
-        <label>Solar bodies: {props.sector.solarBodies.length}</label>
+        <label><strong>Solar bodies: {props.sector.solarBodies.length}</strong></label>
+        <div className="solarBodies">
+        {props.sector.solarBodies.map((sb, i) => (
+            <button className="solarBodyButton" key={i}>Type: {sb.typeName}</button>
+        ))}
+        </div>
       </div>
     );
   }

@@ -5,3 +5,14 @@
   width: 100%;
   padding: 10px;
 }
+
+.solarBodies {
+    display: flex;
+    flex-direction: column;    
+    /* margin: 5px; */
+    /* padding: 5px; */
+}
+
+.solarBodyButton {
+    margin: 5px;
+}
