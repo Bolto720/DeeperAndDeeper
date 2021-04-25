@@ -16,5 +16,6 @@
 .sectorInfoButton {
     margin: 5px;
     background-color: rgb(141, 141, 141);
-    border-radius: 5px;
+    border-radius: 5px;  box-shadow: 2px 2px 4px black;
+
 }

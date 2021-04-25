@@ -5,8 +5,25 @@
   padding: 10px;
 }
 
+.solarBody {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  border-style: groove;
+  padding: 0 5px 0 5px;
+  margin: 5px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px black;
+}
+
+.solarBodyLabel {
+  width: 40%;
+}
+
 .solarBodyButton {
-    margin: 5px;
-    background-color: slategray;
-    border-radius: 5px;
+  margin: 5px;
+  background-color: slategray;
+  border-radius: 5px;
+  width: 80px;
+  box-shadow: 2px 2px 4px black;
 }

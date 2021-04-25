@@ -19,7 +19,11 @@ function SolarBodyInfo(props) {
           <label><strong>Type: {props.solarBody.typeName}</strong></label>
           <label><strong>Resources: {props.solarBody.resources.length}</strong></label>
           {props.solarBody.resources.map((resource, i) => (
-              <button className="solarBodyButton">{resource.resourceType}: {resource.amount}</button>
+            <div className="solarBody">
+              <label className="solarBodyLabel">{resource.resourceType}:</label>
+              <label className="solarBodyLabel"> {resource.amount} tonnes</label>
+              <button className="solarBodyButton">Mine</button>
+              </div>
           ))}
       </div>
     );

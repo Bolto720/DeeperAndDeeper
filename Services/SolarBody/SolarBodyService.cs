@@ -34,11 +34,11 @@ namespace DeeperAndDeeper.Service.SolarBodyServices
             Array sbTypes = Enum.GetValues(typeof(SolarBodyType));
 
             SolarBody solarBody = new SolarBody();
-            solarBody.ID = 0;
+            solarBody.ID = rand.Next(1000);
             solarBody.Type = (SolarBodyType)sbTypes.GetValue(rand.Next(sbTypes.Length));
             solarBody.Resources = new List<Resource>();
 
-            for (int i = 0; i < rand.Next(2, 9); i++)
+            for (int i = 0; i < rand.Next(1, 7); i++)
             {
                 solarBody.Resources.Add(_resourceService.CreateResource());
             }

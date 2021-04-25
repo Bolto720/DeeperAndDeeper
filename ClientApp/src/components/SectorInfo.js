@@ -25,7 +25,7 @@ function SectorInfo(props) {
         {props.sector.solarBodies.map((sb, i) => (
             <button className="sectorInfoButton" 
             key={i}
-            onClick={() => props.solarBodySelected(sb)} >{sb.typeName}</button>
+            onClick={() => props.solarBodySelected(sb)} >{sb.typeName} {sb.id.toString()}</button>
         ))}
         </div>
       </div>
