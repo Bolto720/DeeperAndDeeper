@@ -1,4 +1,4 @@
-import React, { StyleSheet } from "react";
+import React, { useState } from "react";
 import "./Sector.css";
 
 import starmap_0 from '../starmaps/starmaps_0.png'
@@ -13,6 +13,8 @@ import starmap_8 from '../starmaps/starmaps_8.png'
 
 
 function Sector(props) {
+  const [sector, setSector] = useState(null);
+
   const images = [
     starmap_0,
     starmap_1,
@@ -25,12 +27,17 @@ function Sector(props) {
     starmap_8,
   ]
 
+  const handleClick = () => {
+    setSector(props.sector);    
+    props.sectorSelected(props.sector);    
+  }
+
   return (
     <button
       className="square"
-      onClick={() => props.sectorSelected(props.sector)}      
+      onClick={handleClick}      
     >
-        <img className="image" src={images[Math.floor(Math.random() * 9)]}/>
+        <img className="image" src={images[Math.floor(Math.random() * 9)]}/>        
     </button>
   );
 }
