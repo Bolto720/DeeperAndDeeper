@@ -16,9 +16,9 @@ namespace DeeperAndDeeper.Service.SectorMapServices
 
             _sectorMap.Sectors = new List<Sector>();
 
-            for (int x = 0; x < 15; x++)
+            for (int y = 0; y < 10; y++)
             {
-                for (int y = 0; y < 15; y++)
+                for (int x = 0; x < 10; x++)
                 {
                     _sectorMap.Sectors.Add(_sectorService.CreateSector(new SectorServices.Requests.CreateSectorRequest()
                     {

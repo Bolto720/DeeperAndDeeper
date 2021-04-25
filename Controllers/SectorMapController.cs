@@ -31,5 +31,18 @@ namespace DeeperAndDeeper.Controllers
                 return StatusCode(500, ex);
             }
         }
+
+        [HttpGet("getsector")]
+        public IActionResult GetSector(int x, int y)
+        {
+            try
+            {
+                return Ok(_sectorMapService.GetSector(new Position() { X = x, Y = y }));
+            }
+            catch (System.Exception ex)
+            {
+                return StatusCode(500, ex);
+            }
+        }
     }
 }

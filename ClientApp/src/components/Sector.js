@@ -1,15 +1,17 @@
-import React, {StyleSheet} from 'react'
-import './Sector.css'
+import React, { StyleSheet } from "react";
+import "./Sector.css";
 
 function Sector(props) {
-    console.log(props);
-    return (
-        <div>
-            <button className="square" style={{left: props.sector.pos.x * 100, top: props.sector.pos.y * 100}}>
-                {props.sector.solarBodies.length}
-                </button>
-        </div>
-    )
+
+  return (
+    <button
+      className="square"
+      onClick={() => props.sectorSelected(props.sector)}
+      style={{ left: props.sector.pos.x * 50, top: props.sector.pos.y * 50 }}
+    >
+      {props.sector.pos.y}/{props.sector.pos.x}
+    </button>
+  );
 }
 
-export default Sector
+export default Sector;

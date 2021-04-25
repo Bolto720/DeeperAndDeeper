@@ -1,0 +1,6 @@
+.sectorContainer {
+    display: flex;
+    flex-flow: wrap;
+    height: 80%;
+    width: 100%;
+}

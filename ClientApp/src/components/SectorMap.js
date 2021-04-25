@@ -1,25 +1,26 @@
-import React, { useEffect, useState } from 'react'
-import Sector from './Sector'
+import React, { useEffect, useState } from "react";
+import Sector from "./Sector";
 
-export default function SectorMap() {
-    const [sectors, setSectors] = useState([]);
+import './SectorMap.css';
 
-    useEffect(() => 
-    {
-            getSectors();
-    }, []);
+export default function SectorMap(props) {
+  const [sectors, setSectors] = useState([]);
 
-const getSectors = async () => {
-    const response = await fetch('sectormap');
+  useEffect(() => {
+    getSectors();
+  }, []);
+
+  const getSectors = async () => {
+    const response = await fetch("sectormap");
     const data = await response.json();
     setSectors(data);
-}
+  };
 
-    return (
-        <div>            
-            {sectors.map((sec, i) => (
-                <Sector sector={sec}></Sector>
-            ))}
-        </div>
-    )
+  return (
+    <div className="sectorContainer">
+      {sectors.map((sec, i) => (
+        <Sector sector={sec} sectorSelected={props.sectorSelected}></Sector>
+      ))}
+    </div>
+  );
 }
