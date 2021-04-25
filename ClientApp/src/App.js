@@ -5,6 +5,7 @@ import { Layout } from "./components/Layout";
 import SectorInfo from "./components/SectorInfo";
 
 import SectorMap from "./components/SectorMap";
+import SolarBodyInfo from "./components/SolarBodyInfo";
 
 import "./custom.css";
 
@@ -14,13 +15,17 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentSector: null
+      currentSector: null,
+      currentSolarBody: null,
     };
   }
 
   sectorSelected = (sector) => {
-    console.log(sector.pos.x);
-    this.setState({currentSector: sector});
+    this.setState({currentSector: sector, currentSolarBody: null});
+  }
+
+  solarBodySelected = (solarBody) => {
+    this.setState({currentSolarBody: solarBody});
   }
 
   render() {
@@ -28,18 +33,13 @@ export default class App extends Component {
       <Layout>
         <div className={"mainPanel"}>
           <div className={"leftPanel"}>
-          <SectorInfo sector={this.state.currentSector}></SectorInfo>
+          <SectorInfo sector={this.state.currentSector} solarBodySelected={this.solarBodySelected}></SectorInfo>
+          <SolarBodyInfo solarBody={this.state.currentSolarBody}></SolarBodyInfo>
           </div>
           <div className={"rightPanel"}>
-            {/* <div className={"topRightPanel"}> */}
             <SectorMap sectorSelected={this.sectorSelected}></SectorMap>
-            {/* </div> */}
-            {/* <div className={"bottomRightPanel"}>               */}
-           
-            {/* </div> */}
           </div>
         </div>
-        {/* <SectorMap></SectorMap> */}
       </Layout>
     );
   }

@@ -2,6 +2,7 @@ using Microsoft.Extensions.DependencyInjection;
 using DeeperAndDeeper.Service.SectorMapServices;
 using DeeperAndDeeper.Service.SectorServices;
 using DeeperAndDeeper.Service.SolarBodyServices;
+using DeeperAndDeeper.Service.ResourceServices;
 
 namespace DeeperAndDeeper.Service.IoC
 {
@@ -12,6 +13,7 @@ namespace DeeperAndDeeper.Service.IoC
             collection.AddScoped<ISectorMapService, SectorMapService>();
             collection.AddScoped<ISectorService, SectorService>();
             collection.AddScoped<ISolarBodyService, SolarBodyService>();
+            collection.AddScoped<IResourceService, ResourceService>();
         }
     }
 }

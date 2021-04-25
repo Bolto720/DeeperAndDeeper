@@ -1,0 +1,12 @@
+.mainSolarBodyInfo {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  padding: 10px;
+}
+
+.solarBodyButton {
+    margin: 5px;
+    background-color: slategray;
+    border-radius: 5px;
+}

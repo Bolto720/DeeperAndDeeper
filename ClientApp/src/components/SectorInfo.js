@@ -4,7 +4,7 @@ import "./SectorInfo.css";
 function SectorInfo(props) {
   if (props.sector === null) {
     return (
-      <div className="main">
+      <div className="mainSectorInfo">
         <label>
           <h3>Sector Information</h3>
         </label>
@@ -13,17 +13,19 @@ function SectorInfo(props) {
     );
   } else {
     return (
-      <div className="main">
+      <div className="mainSectorInfo">
         <label>
           <h3>Sector Information</h3>
         </label>
         <label>
-          <strong>Coordinates: {props.sector.pos.y}/{props.sector.pos.x}</strong>
+          <strong>Coordinates: {props.sector.pos.y}:{props.sector.pos.x}</strong>
         </label>
         <label><strong>Solar bodies: {props.sector.solarBodies.length}</strong></label>
         <div className="solarBodies">
         {props.sector.solarBodies.map((sb, i) => (
-            <button className="solarBodyButton" key={i}>Type: {sb.typeName}</button>
+            <button className="sectorInfoButton" 
+            key={i}
+            onClick={() => props.solarBodySelected(sb)} >{sb.typeName}</button>
         ))}
         </div>
       </div>

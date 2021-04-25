@@ -1,8 +1,8 @@
-.main {
+.mainSectorInfo {
   display: flex;
   flex-direction: column;
-  height: 20%;
-  width: 100%;
+  height: 50%;
+  /* width: 100%; */
   padding: 10px;
 }
 
@@ -13,6 +13,8 @@
     /* padding: 5px; */
 }
 
-.solarBodyButton {
+.sectorInfoButton {
     margin: 5px;
+    background-color: rgb(141, 141, 141);
+    border-radius: 5px;
 }
