@@ -1,7 +1,7 @@
 # DeeperAndDeeper
 LD48 Game
 
-This has been build with ASP.Net core and React, following an API first design pattern.
+This has been built with ASP.Net core and React, following an API first design pattern.
 
 ![Sreenie](images/DeeperAndDeeper.png)
 
