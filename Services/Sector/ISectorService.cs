@@ -6,7 +6,6 @@ namespace DeeperAndDeeper.Service.SectorServices
 {
     public interface ISectorService
     {
-        public Sector CreateSector(CreateSectorRequest request);
         
     }
 }

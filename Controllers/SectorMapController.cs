@@ -37,7 +37,7 @@ namespace DeeperAndDeeper.Controllers
         {
             try
             {
-                return Ok(_sectorMapService.GetSector(new Position() { X = x, Y = y }));
+                return Ok(_sectorMapService.GetSector(x, y));
             }
             catch (System.Exception ex)
             {

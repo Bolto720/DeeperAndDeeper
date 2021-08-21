@@ -6,6 +6,6 @@ namespace DeeperAndDeeper.Service.SectorMapServices
     public interface ISectorMapService
     {
         public ICollection<Sector> GetSectors();
-        public Sector GetSector(Position position);
+        public Sector GetSector(int x, int y);
     }
 }

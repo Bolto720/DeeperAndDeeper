@@ -1,7 +1,7 @@
 .sectorContainer {
     display: flex;
     flex-flow: wrap;
-    height: 80%;
-    width: 100%;      box-shadow: 2px 2px 4px black;
-
+    height: 50em;
+    width: 50em;      
+    box-shadow: 2px 2px 4px black;
 }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using DeeperAndDeeper.Data;
 using DeeperAndDeeper.Models;
 using DeeperAndDeeper.Service.SectorServices;
 
@@ -7,36 +8,23 @@ namespace DeeperAndDeeper.Service.SectorMapServices
 {
     public class SectorMapService : ISectorMapService
     {
-        private readonly SectorMap _sectorMap = new SectorMap();
+        private readonly DeeperAndDeeperContext _context;
         private readonly ISectorService _sectorService;
 
-        public SectorMapService(ISectorService sectorService)
+        public SectorMapService(DeeperAndDeeperContext context, ISectorService sectorService)
         {
+            _context = context;
             _sectorService = sectorService;
-
-            _sectorMap.Sectors = new List<Sector>();
-
-            for (int y = 0; y < 10; y++)
-            {
-                for (int x = 0; x < 10; x++)
-                {
-                    _sectorMap.Sectors.Add(_sectorService.CreateSector(new SectorServices.Requests.CreateSectorRequest()
-                    {
-                        ID = x + y,
-                        Pos = new Position() { X = x, Y = y }
-                    }));
-                }
-            }
         }
 
-        public Sector GetSector(Position position)
+        public Sector GetSector(int x, int y)
         {
-            return _sectorMap.Sectors.FirstOrDefault(x => x.Pos == position);
+            return _context.Sector.FirstOrDefault(l => l.X == x && l.Y == y);
         }
 
         public ICollection<Sector> GetSectors()
         {
-            return _sectorMap.Sectors;
+            return _context.Sector.ToList();
         }
     }
 }

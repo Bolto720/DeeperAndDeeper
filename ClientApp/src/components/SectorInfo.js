@@ -18,7 +18,7 @@ function SectorInfo(props) {
           <h3>Sector Information</h3>
         </label>
         <label>
-          <strong>Coordinates: {props.sector.pos.y}:{props.sector.pos.x}</strong>
+          <strong>Coordinates: {props.sector.y}:{props.sector.x}</strong>
         </label>
         <label><strong>Solar bodies: {props.sector.solarBodies.length}</strong></label>
         <div className="solarBodies">

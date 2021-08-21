@@ -13,37 +13,5 @@ namespace DeeperAndDeeper.Service.SolarBodyServices
         {
             _resourceService = resourceService;
         }
-
-        public ICollection<SolarBody> CreateSolarBodies()
-        {
-            List<SolarBody> solarBodies = new List<SolarBody>();
-            var rand = new Random();
-
-            for (int i = 0; i < rand.Next(2, 9); i++)
-            {
-                solarBodies.Add(CreateSolarBody());
-            }
-
-            return solarBodies;
-        }
-
-        public SolarBody CreateSolarBody()
-        {
-            var rand = new Random();
-
-            Array sbTypes = Enum.GetValues(typeof(SolarBodyType));
-
-            SolarBody solarBody = new SolarBody();
-            solarBody.ID = rand.Next(1000);
-            solarBody.Type = (SolarBodyType)sbTypes.GetValue(rand.Next(sbTypes.Length));
-            solarBody.Resources = new List<Resource>();
-
-            for (int i = 0; i < rand.Next(1, 7); i++)
-            {
-                solarBody.Resources.Add(_resourceService.CreateResource());
-            }
-
-            return solarBody;
-        }
     }
 }

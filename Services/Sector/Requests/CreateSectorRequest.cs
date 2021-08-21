@@ -2,9 +2,9 @@ using DeeperAndDeeper.Models;
 
 namespace DeeperAndDeeper.Service.SectorServices.Requests
 {
-    public class CreateSectorRequest
+    public class GetSectorRequest
     {
-        public long ID { get; set; }
-        public Position Pos { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
     }
 }

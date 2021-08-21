@@ -13,16 +13,5 @@ namespace DeeperAndDeeper.Service.SectorServices
         {
             _solarBodyService = solarBodyService;
         }
-
-        public Sector CreateSector(CreateSectorRequest request)
-        {
-            Sector sector = new Sector();
-            sector.ID = 0;
-            sector.Pos = request.Pos;
-            sector.SolarBodies = _solarBodyService.CreateSolarBodies();
-
-            return sector;
-
-        }
     }
 }

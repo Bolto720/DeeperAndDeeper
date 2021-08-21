@@ -5,7 +5,6 @@ namespace DeeperAndDeeper.Service.SolarBodyServices
 {
     public interface ISolarBodyService
     {
-        public SolarBody CreateSolarBody();
-        public ICollection<SolarBody> CreateSolarBodies();
+        
     }
 }

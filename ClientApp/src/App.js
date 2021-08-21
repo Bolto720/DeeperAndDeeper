@@ -7,7 +7,7 @@ import SectorInfo from "./components/SectorInfo";
 import SectorMap from "./components/SectorMap";
 import SolarBodyInfo from "./components/SolarBodyInfo";
 
-import "./custom.css";
+import "./App.css";
 
 export default class App extends Component {
   static displayName = App.name;
@@ -38,6 +38,7 @@ export default class App extends Component {
           </div>
           <div className={"rightPanel"}>
             <SectorMap sectorSelected={this.sectorSelected}></SectorMap>
+            <label>test</label>
           </div>
         </div>
       </Layout>
